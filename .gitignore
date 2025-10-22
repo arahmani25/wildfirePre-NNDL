@@ -1,0 +1,72 @@
+# ===========================
+# EXCLUDE ALL PYTHON FILES
+# ===========================
+# We only upload HTML/CSS/JS to GitHub!
+
+# Python files
+*.py
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+requirements.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# TensorFlow / Keras
+*.h5
+*.hdf5
+*.pb
+saved_model/
+*.tflite
+
+# ===========================
+# EXCLUDE LARGE DATASETS
+# ===========================
+# 2 GB of images - too large for GitHub!
+
+train/
+test/
+valid/
+
+# Logs
+logs/
+*.log
+tensorboard/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model outputs (keep folder structure, ignore contents)
+models/*.h5
+models/*.tflite
+models/saved_model/
+
+# Generated plots
+plots/*.png
+plots/*.jpg
+eda_results/*.png
+eda_results/*.jpg
+
+# Keep README files in output directories
+!models/README.md
+!plots/README.md
+!eda_results/README.md
