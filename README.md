@@ -3,7 +3,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 
 > **AI-powered image analysis for early wildfire detection and prevention - 100% Browser-Based**
 
