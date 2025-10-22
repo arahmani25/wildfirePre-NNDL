@@ -1,0 +1,379 @@
+/* ===========================
+   Architecture Section Styles
+   =========================== */
+
+.architecture-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #ffffff 0%, var(--warm-cream) 50%, #ffffff 100%);
+}
+
+.architecture-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+    flex-wrap: wrap;
+}
+
+.arch-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.2rem 2rem;
+    background: white;
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.arch-btn i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.arch-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
+}
+
+.arch-btn.active {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(88, 129, 87, 0.3);
+}
+
+.arch-btn.active i {
+    color: white;
+    transform: scale(1.2);
+}
+
+.architecture-display {
+    min-height: 600px;
+    position: relative;
+}
+
+.arch-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.arch-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.arch-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border-top: 5px solid var(--secondary-color);
+}
+
+.arch-diagram h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.8rem;
+}
+
+/* Network Flow Visualization */
+.network-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--warm-cream) 100%);
+    border-radius: 15px;
+    min-height: 300px;
+}
+
+.network-flow.vertical {
+    flex-direction: column;
+}
+
+.layer-box {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 100px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.layer-box:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.layer-box small {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    opacity: 0.9;
+}
+
+.layer-box.input {
+    background: linear-gradient(135deg, var(--sky-blue), var(--ocean-teal));
+    color: white;
+    border: 3px solid var(--ocean-teal);
+}
+
+.layer-box.conv {
+    background: linear-gradient(135deg, var(--secondary-color), var(--leaf-green));
+    color: white;
+    border: 3px solid var(--leaf-green);
+}
+
+.layer-box.pool {
+    background: linear-gradient(135deg, var(--accent-color), var(--moss-green));
+    color: white;
+    border: 3px solid var(--moss-green);
+}
+
+.layer-box.flatten {
+    background: linear-gradient(135deg, var(--sand-beige), var(--orange-fire));
+    color: white;
+    border: 3px solid var(--orange-fire);
+}
+
+.layer-box.dense {
+    background: linear-gradient(135deg, var(--primary-color), var(--forest-dark));
+    color: white;
+    border: 3px solid var(--forest-dark);
+}
+
+.layer-box.dropout {
+    background: linear-gradient(135deg, var(--smoke-gray), #5a6268);
+    color: white;
+    border: 3px solid #5a6268;
+}
+
+.layer-box.output {
+    background: linear-gradient(135deg, var(--fire-color), #dc2f02);
+    color: white;
+    border: 3px solid #dc2f02;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 3px 8px rgba(230, 57, 70, 0.3); }
+    50% { box-shadow: 0 3px 20px rgba(230, 57, 70, 0.6); }
+}
+
+.layer-box.latent {
+    background: linear-gradient(135deg, #6a4c93, #9d4edd);
+    color: white;
+    border: 3px solid #9d4edd;
+}
+
+.layer-box.upsample {
+    background: linear-gradient(135deg, var(--sunset-orange), #ff9500);
+    color: white;
+    border: 3px solid #ff9500;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    animation: flowAnimation 1.5s infinite;
+}
+
+@keyframes flowAnimation {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.flow-arrow.merge {
+    font-size: 2rem;
+    color: var(--fire-color);
+}
+
+/* Hybrid Architecture Specific */
+.hybrid-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+}
+
+.branch-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Encoder/Decoder Sections */
+.encoder-section, .decoder-section {
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 0.5rem 0;
+}
+
+.encoder-section {
+    background: linear-gradient(180deg, rgba(78, 168, 222, 0.1), rgba(72, 191, 227, 0.1));
+    border: 2px dashed var(--sky-blue);
+}
+
+.decoder-section {
+    background: linear-gradient(180deg, rgba(251, 133, 0, 0.1), rgba(255, 149, 0, 0.1));
+    border: 2px dashed var(--sunset-orange);
+}
+
+/* Architecture Details */
+.arch-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.arch-details h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.arch-details p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.arch-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.arch-details ul li {
+    padding: 0.5rem 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.perf-metric {
+    background: linear-gradient(135deg, var(--warm-cream), #fff);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid var(--success-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.perf-metric:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.perf-metric strong {
+    color: var(--success-color);
+    font-size: 1.1rem;
+}
+
+.badge-best {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--forest-dark);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    animation: shimmer 2s infinite;
+    margin-top: 1rem;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .arch-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .network-flow {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .architecture-selector {
+        gap: 0.5rem;
+    }
+    
+    .arch-btn {
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .arch-btn i {
+        font-size: 1.5rem;
+    }
+    
+    .layer-box {
+        min-width: 80px;
+        padding: 0.8rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .flow-arrow {
+        font-size: 1.2rem;
+    }
+}
+
+/* Floating Animation for Cards */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.arch-grid:hover {
+    animation: float 3s ease-in-out infinite;
+}
